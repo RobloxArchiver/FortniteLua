@@ -31,8 +31,12 @@ export.killSession = function(token)
     return "https://account-public-service-prod03.ol.epicgames.com/account/api/oauth/sessions/kill/" .. tostring(token)
 end
 
-export.leaderBoardScore = function()
-    return "Not Written Yet"
+export.leaderBoardScore = function(plat, groupType)
+    return "https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/leaderboards/type/global/stat/br_placetop1_" .. plat .. "_m0" .. groupType .. "/window/weekly?ownertype=1&pageNumber=0&itemsPerPage=50"
+end
+
+export.displayNameFromId = function(id)
+    return "https://account-public-service-prod03.ol.epicgames.com/account/api/public/account?accountId=" .. id
 end
 
 return export
